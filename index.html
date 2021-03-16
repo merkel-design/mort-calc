@@ -11,31 +11,31 @@
        <div class="first-block" id="grid-format">
            <h1>Home Affordability</h1>
 
-           <label id="grossLabel"></label>
+           <!-- "label background" is for the white space behind the numbers -->
+           <!-- each label and input will have an unique ID-->
+           <div class="label-background"><label id="grossLabel"></label></div>
            <h3>Annual gross income</h3>
            <input class="range-slider flat" id="grossInput" oninput="addComa(grossInput.id,grossLabel.id)" type="range" min="0" max="1000000" value="0">
 
-           <label id="monthly-debt-obligations-label"></label>
+           <div class="label-background"><label id="debtLabel"></label></div>
            <h3>Monthly debt obligations</h3>
-           <input class="range-slider flat" id="monthly-debt-obligations-input" type="range" min="0" max="10000" value="0">
+           <input class="range-slider flat" id="debtInput" oninput="addComa(debtInput.id,debtLabel.id)"type="range" min="0" max="10000" value="0">
 
+           <div class="label-background"><label id="downPaymentLabel"></label></div>
            <h3>Down payment</h3>
-           <input class="range-slider flat" type="range" min="0" max="1000000" value="0">
-
+           <input class="range-slider flat" id="downPaymentInput" oninput="addComa(downPaymentInput.id,downPaymentLabel.id)"type="range" min="0" max="1000000" value="0">
+           
+           <div class="label-background"><label id="termLabel" ></label></div>
            <h3>Term(years)</h3>
-           <input class="range-slider flat" type="range" min="15" max="30" value="30">
+           <input class="range-slider flat" id="termInput" oninput="addComa(termInput.id,termLabel.id)" type="range" min="15" max="30" value="30" placeholder="30">
 
+           <div class="label-background"><label id="InterestLabel"></label></div>
            <h3>Interest rate</h3>
-           <input class="range-slider flat" type="range" min="1" max="20" value="5">
+           <input class="range-slider flat" id="interestInput" oninput="addComa(interestInput.id,InterestLabel.id)" type="range" min="1" max="20" value="5">
 
            <button>Calculate</button>
 
-           <!-- Delete me...this is testing code below -->
-
-           <label id="label"></label>
-           <h3>Annual gross income</h3>
-           <input class="range-slider flat" id="input" oninput="addComa(input.id,label.id)" type="range" min="0" max="1000000" value="0">
-
+           <!--oninput="addComa(.id,.id)"-->
        </div>
 
        <div class="second-block" id="grid-format"></div>

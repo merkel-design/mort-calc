@@ -5,7 +5,10 @@
         
 
         //this adds the increment on the slider to whatever number
-        document.getElementById("grossInput").step = "1000";
+        document.getElementById("grossInput").step = "5000";
+        document.getElementById("debtInput").step = "10";
+        document.getElementById("downPaymentInput").step = "1000";
+        
 
 
     function addComa(input,label)   {  
@@ -14,7 +17,7 @@
         let num = document.getElementById(input).value;
        
 
-        if (num > 1000 && num < 10000) {
+        if (num > 999 && num < 10000) {
             
             let x = num.split('');
  
