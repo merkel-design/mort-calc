@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+    <header>
+        <link type="text/css" rel="stylesheet" href="mortgagecalc.css">
+    </header>
+
+    <body>
+        <div class="block-container-grid">
+
+       <div class="first-block" id="grid-format">
+           <h1>Home Affordability</h1>
+
+           <label id="gross-income-label"></label>
+           <h3>Annual gross income</h3>
+           <input class="range-slider flat" id="gross-income-input" oninput="addComa()" type="range" min="0" max="1000000" value="0">
+
+           <label id="monthly-debt-obligations-label"></label>
+           <h3>Monthly debt obligations</h3>
+           <input class="range-slider flat" id="monthly-debt-obligations-input" type="range" min="0" max="10000" value="0">
+
+           <h3>Down payment</h3>
+           <input class="range-slider flat" type="range" min="0" max="1000000" value="0">
+
+           <h3>Term(years)</h3>
+           <input class="range-slider flat" type="range" min="15" max="30" value="30">
+
+           <h3>Interest rate</h3>
+           <input class="range-slider flat" type="range" min="1" max="20" value="5">
+
+           <button>Calculate</button>
+
+       </div>
+
+       <div class="second-block" id="grid-format"></div>
+
+       <div class="third-block" id="grid-format"></div>
+
+    </div>
+
+    </body>
+    
+    <script src="mortgageCalc.js"></script>
+</html>
