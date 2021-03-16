@@ -10,10 +10,6 @@ body{
     height: 100%;
 }
 
-#gross-income-label{
-    display:block;
-}
-
 .block-container-grid{
     display: grid;
     height: 80vh;

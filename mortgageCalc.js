@@ -5,13 +5,13 @@
         
 
         //this adds the increment on the slider to whatever number
-        document.getElementById("gross-income-input").step = "1000";
+        document.getElementById("grossInput").step = "1000";
 
 
-    function addComa()   {  
+    function addComa(input,label)   {  
         
         
-        let num = document.getElementById("gross-income-input").value;
+        let num = document.getElementById(input).value;
        
 
         if (num > 1000 && num < 10000) {
@@ -47,6 +47,6 @@
             }
         
 
-        document.getElementById("gross-income-label").innerHTML = num;
+        document.getElementById(label).innerHTML = num;
     }
-    addComa();
+    
