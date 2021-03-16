@@ -58,11 +58,20 @@ body{
   button{
       height: 20px;
       width: 70px;
+      position: relative;
+      margin: 10px 0 0 0;
   }
   .label-background{
       position: relative;
       margin: auto;
       height: 20px;
       width: 70px;
+      background-color: white;
+  }
+  .final-number-text-box{
+      position: relative;
+      margin: 30px auto;
+      height: 30px;
+      width: 120px;
       background-color: white;
   }
