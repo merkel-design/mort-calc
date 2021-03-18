@@ -55,25 +55,31 @@
 
     function addition() {
         //annual gross income
-        const grossIncome = document.getElementById("grossInput").value
+        const grossIncome = parseInt(document.getElementById("grossInput").value)
 
         //monthly debt amount
-        const debt = document.getElementById("debtInput").value
+        const debt = parseInt(document.getElementById("debtInput").value)
 
         //down payment amount
-        const downPayment = document.getElementById("downPaymentInput").value
+        const downPayment = parseInt(document.getElementById("downPaymentInput").value)
 
         //term in years
-        const term = document.getElementById("termInput").value
+        const term = parseInt(document.getElementById("termInput").value)
 
         //interest rate
-        const interestRate = document.getElementById("interestInput").value
+        const interestRate = parseInt(document.getElementById("interestInput").value)
 
+        let returnedNumber = 
         
         
 
         // this updates the text box for FINAL NUM !!!
-        //document.getElementById("final-num").textContent = grossIncome;
+
+      //document.getElementById("final-num").textContent = returnedNumber;
+
+
+        
+
     };
     
     
