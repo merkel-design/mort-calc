@@ -54,10 +54,10 @@
     };
 
     function addition() {
-        //annual gross income
-        const grossIncome = parseInt(document.getElementById("grossInput").value)
+        //monthly gross income
+        const grossIncome = (parseInt(document.getElementById("grossInput").value)) / 12;
 
-        //monthly debt amount
+        //monthly debt amount 
         const debt = parseInt(document.getElementById("debtInput").value)
 
         //down payment amount
@@ -69,13 +69,15 @@
         //interest rate
         const interestRate = parseInt(document.getElementById("interestInput").value)
 
-        let returnedNumber = 
+
+        //L[c(1 + c)n]/[(1 + c)n - 1]
+        let returnedNumber = (grossIncome * 0.28)
         
         
 
         // this updates the text box for FINAL NUM !!!
 
-      //document.getElementById("final-num").textContent = returnedNumber;
+      document.getElementById("final-num").textContent = returnedNumber;
 
 
         
