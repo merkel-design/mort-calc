@@ -69,39 +69,38 @@
         //interest rate
         let interestRate = document.getElementById("interestInput").value;
 
-        function interestRateFormatter()  {
-            interestRatePlaceholder = interestRate.split('')
+        //interest rate as a decimal
+        let decimalInterest = interestRateFormatter(interestRate)
 
-            if (interestRate > 9) {
-                interestRatePlaceholder.unshift("0.0")
+        //thisfunction takes the user unput percentage rate and returns the interest as a decimal
+        function interestRateFormatter(interestRate)  {
+            interestRatePlaceholder = 01;
+
+            if (interestRate > 10) {
+                interestRatePlaceholder = (interestRate/100).toFixed(2)
             }
             else if(interestRate < 10) {
-                interestRatePlaceholder.unshift("0.")
+                interestRatePlaceholder = (interestRate/100).toFixed(2)
             }
 
-            interestRatePlaceholder.filter(x => x !== ',')
-            parseInt(interestRatePlaceholder.join(''))
-
-            
-           
-           
-            console.log(`This is the interest rate raw value ${interestRate} and this is the formatted vers. ${interestRatePlaceholder}`)
+           return parseFloat(interestRatePlaceholder) 
         };
-        interestRateFormatter();
 
 
         //L[c(1 + c)n]/[(1 + c)n - 1]
 
         // return a loan amount based on inputs
-
+        
 
         //let interest = loan x interest x years
        let interest = loan * interestRate * term;
 
         //28% Debt to Income
-       let allowedMortgagePayment = ((grossIncome - debt) - interest) * 0.28
+       let   = ((grossIncome - debt) - interest) * 0.28
 
        let loan = allowedMortgagePayment * 12 * term;
+       
+       
 
        
         
