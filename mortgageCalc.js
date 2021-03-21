@@ -67,17 +67,49 @@
         const term = parseInt(document.getElementById("termInput").value)
 
         //interest rate
-        const interestRate = parseInt(document.getElementById("interestInput").value)
+        let interestRate = document.getElementById("interestInput").value;
+
+        function interestRateFormatter()  {
+            interestRatePlaceholder = interestRate.split('')
+
+            if (interestRate > 9) {
+                interestRatePlaceholder.unshift("0.0")
+            }
+            else if(interestRate < 10) {
+                interestRatePlaceholder.unshift("0.")
+            }
+
+            interestRatePlaceholder.filter(x => x !== ',')
+            parseInt(interestRatePlaceholder.join(''))
+
+            
+           
+           
+            console.log(`This is the interest rate raw value ${interestRate} and this is the formatted vers. ${interestRatePlaceholder}`)
+        };
+        interestRateFormatter();
 
 
         //L[c(1 + c)n]/[(1 + c)n - 1]
-        let returnedNumber = (grossIncome * 0.28)
+
+        // return a loan amount based on inputs
+
+
+        //let interest = loan x interest x years
+       let interest = loan * interestRate * term;
+
+        //28% Debt to Income
+       let allowedMortgagePayment = ((grossIncome - debt) - interest) * 0.28
+
+       let loan = allowedMortgagePayment * 12 * term;
+
+       
         
-        
+      
 
         // this updates the text box for FINAL NUM !!!
 
-      document.getElementById("final-num").textContent = returnedNumber;
+      document.getElementById("final-num").textContent = loan;
 
 
         
