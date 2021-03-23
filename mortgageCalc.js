@@ -72,6 +72,12 @@
         //interest rate as a decimal
         let decimalInterest = interestRateFormatter(interestRate)
 
+
+
+
+
+
+
         //thisfunction takes the user unput percentage rate and returns the interest as a decimal
         function interestRateFormatter(interestRate)  {
             interestRatePlaceholder = 01;
@@ -92,17 +98,25 @@
         // return a loan amount based on inputs
         
 
-        //let interest = loan x interest x years
-       let interest = loan * interestRate * term;
+        
+        
 
-        //28% Debt to Income
-       let   = ((grossIncome - debt) - interest) * 0.28
+        
+        //28% Debt to Income----!!(loan * decimalInterest * term) is the monthly interest payment!!
+    //    var  allowedMortgagePayment = ((grossIncome - debt)) * 0.28
 
-       let loan = allowedMortgagePayment * 12 * term;
-       
-       
+    //    var loan = allowedMortgagePayment * 12 * term;
 
-       
+    //    //var interest = loan x interest x years
+    //         var interest =  decimalInterest * term;
+
+    //         console.log(allowedMortgagePayment * 12 * term)
+
+    var allowedMortgagePayment = (grossIncome - debt) * .28;
+
+    var loan = allowedMortgagePayment * 12 * term;
+
+       console.log(loan)
         
       
 
