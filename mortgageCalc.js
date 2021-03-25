@@ -51,11 +51,12 @@
         
 
         document.getElementById(label).innerHTML = num;
+        return num;
     };
 
     function addition() {
-        //monthly gross income
-        const grossIncome = (parseInt(document.getElementById("grossInput").value)) / 12;
+        //Mortgage amount
+        const mortgage = (parseInt(document.getElementById("grossInput").value));
 
         //monthly debt amount 
         const debt = parseInt(document.getElementById("debtInput").value)
@@ -63,8 +64,8 @@
         //down payment amount
         const downPayment = parseInt(document.getElementById("downPaymentInput").value)
 
-        //term in years
-        const term = parseInt(document.getElementById("termInput").value)
+        //term in months
+        const term = parseInt(document.getElementById("termInput").value) * 12;
 
         //interest rate
         let interestRate = document.getElementById("interestInput").value;
@@ -80,7 +81,7 @@
 
         //thisfunction takes the user unput percentage rate and returns the interest as a decimal
         function interestRateFormatter(interestRate)  {
-            interestRatePlaceholder = 01;
+            interestRatePlaceholder = 0;
 
             if (interestRate > 10) {
                 interestRatePlaceholder = (interestRate/100).toFixed(2)
@@ -89,43 +90,55 @@
                 interestRatePlaceholder = (interestRate/100).toFixed(2)
             }
 
-           return parseFloat(interestRatePlaceholder) 
+           return parseFloat(interestRatePlaceholder) / 12
         };
 
+     
 
-        //L[c(1 + c)n]/[(1 + c)n - 1]
+    const partOne = decimalInterest * (Math.pow((1 + decimalInterest), term));
+    const partTwo = (Math.pow((1 + decimalInterest), term)) - 1;
 
-        // return a loan amount based on inputs
-        
+    //let returnedValue =  mortgage * (((decimalInterest * (Math.pow((1 + decimalInterest), term))) / (Math.pow((1 + decimalInterest), term)) - 1))
 
-        
-        
+    let returnedValue =  Math.ceil(mortgage * (partOne / partTwo));
 
-        
-        //28% Debt to Income----!!(loan * decimalInterest * term) is the monthly interest payment!!
-    //    var  allowedMortgagePayment = ((grossIncome - debt)) * 0.28
 
-    //    var loan = allowedMortgagePayment * 12 * term;
 
-    //    //var interest = loan x interest x years
-    //         var interest =  decimalInterest * term;
 
-    //         console.log(allowedMortgagePayment * 12 * term)
+    
+      
+       console.log((decimalInterest * (Math.pow((1 + decimalInterest), term))))
+       console.log((Math.pow((1 + decimalInterest), term)) - 1)
+       console.log(returnedValue)
+       
+       
 
-    var allowedMortgagePayment = (grossIncome - debt) * .28;
+   
 
-    var loan = allowedMortgagePayment * 12 * term;
-
-       console.log(loan)
-        
       
 
         // this updates the text box for FINAL NUM !!!
 
-      document.getElementById("final-num").textContent = loan;
+      document.getElementById("final-num").textContent = returnedValue;
 
 
+
+
+
+
+
+
+      //P = L[c(1 + c)n]/[(1 + c)n - 1]
+
+        // return a loan amount based on inputs
+        //P = monthly payment
+        //L = loan in $
+        //c = interest
+        //n = months
+
+        //return (mortgage * Math.pow(decimalInterest * (1 + decimalInterest), term)) / (Math.pow(( 1 + decimalInterest), term) -1);
         
+            
 
     };
     
