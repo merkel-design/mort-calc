@@ -21,7 +21,7 @@
         <div class="block-container-grid">
 
        <div class="first-block" id="grid-format">
-           <h1>Home Affordability</h1>
+           <h1 id="grid-header">Home Affordability</h1>
 
            <!-- "label background" is for the white space behind the numbers -->
            <!-- each label and input will have an unique ID-->
@@ -35,7 +35,7 @@
            <!-- <input class="range-slider flat" id="grossInput" oninput="amountTextBoxNum.value=grossInput.value" type="range" min="0" max="1000000" value="0" /> -->
 
 
-           <div class="label-background"><label id="grossLabel"></label></div> 
+           <div class="label-background"><label id="grossLabel">Enter your mortgage amount here</label></div> 
            
            <h3>Mortgage amount</h3>
 
@@ -57,24 +57,29 @@
            <h3>Down payment</h3>
            <input class="range-slider flat" id="downPaymentInput" oninput="addComa(downPaymentInput.id,downPaymentLabel.id)"type="range" min="0" max="500000" value="0">  -->
            
-           <div class="label-background"><label id="termLabel" ></label></div>
+           <div class="label-background"><label id="termLabel">30</label></div>
            <h3>Term(years)</h3>
            <input class="range-slider flat" id="termInput" oninput="addComa(termInput.id,termLabel.id)" type="range" min="15" max="30" value="30" placeholder="30">
 
-           <div class="label-background"><label id="InterestLabel"></label></div>
+           <div class="label-background"><label id="InterestLabel">Enter the interest rate here</label></div>
            <h3>Interest rate</h3>
            <input class="range-slider flat" id="interestInput" oninput="addComa(interestInput.id,InterestLabel.id)" type="range" min="1" max="20" value="5">
 
-        <br>
+        
 
-           <button onclick="addition()">Calculate</button>
+           <button onclick="addition()" id="calcBTTN">Calculate</button>
 
-        <br>
+        
             <div class="first-box-bottom-style">
 
                 <div class="final-number-text-box" onchange="addComa(final-num.id,final-num.id)"><p id="final-num"></p></div>
 
             </div>
+
+
+
+
+
        </div>
 
        <div class="second-block" id="grid-format"></div>

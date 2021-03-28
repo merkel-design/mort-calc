@@ -45,9 +45,13 @@
             num = x.join('').toString();
             }
         
-
+            //this adds the dollar sign to only the mortgage amount label and excludes the interest rate and the term labels
+        if (label === grossLabel.id){
+            document.getElementById(label).innerHTML = "$" + num;
+        }
+        else{
         document.getElementById(label).innerHTML = num;
-        
+        }
     };
 
     // this adds a coma to the returned value
@@ -94,6 +98,7 @@
     
 
     function addition() {
+
         //Mortgage amount
         const mortgage = (parseInt(document.getElementById("grossInput").value));
 
@@ -146,12 +151,17 @@
 
     const partOne = decimalInterest * (Math.pow((1 + decimalInterest), term));
     const partTwo = (Math.pow((1 + decimalInterest), term)) - 1;
+
     let returnedValue =  Math.ceil(mortgage * (partOne / partTwo));
 
 
     // this updates the text box for FINAL NUM !!!
 
-    document.getElementById("final-num").textContent = addComaToReturnedNum(returnedValue);
+    document.getElementById("final-num").textContent = `$${addComaToReturnedNum(returnedValue)}`;
+ 
+
+
+    
 
 
     };
