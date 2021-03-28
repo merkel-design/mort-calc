@@ -7,7 +7,9 @@
         
 
     //this will add a coma to the labels on the sliders
-    function addComa(input,label)   {  
+    function addComa(input,label)   { 
+        
+        
         
         
         let num = document.getElementById(input).value;
@@ -45,9 +47,13 @@
             num = x.join('').toString();
             }
         
-            //this adds the dollar sign to only the mortgage amount label and excludes the interest rate and the term labels
+            //this adds the dollar sign to only the mortgage amount label. 
+            //adds percentage sign to the interest rate and excludes the year / term label
         if (label === grossLabel.id){
             document.getElementById(label).innerHTML = "$" + num;
+        }
+        else if(label === InterestLabel.id){
+            document.getElementById(label).innerHTML = num + "%";
         }
         else{
         document.getElementById(label).innerHTML = num;
