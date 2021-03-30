@@ -130,7 +130,7 @@
         function interestRateFormatter(interestRate)  {
             interestRatePlaceholder = 0;
 
-            if (interestRate > 10) {
+            if (interestRate >= 10) {
                 interestRatePlaceholder = (interestRate/100).toFixed(2)
             }
             else if(interestRate < 10) {
